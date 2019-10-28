@@ -37,7 +37,9 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(8, 0, 6),
   },
   rrd_link: {
-    textDecoration: 'none'
+    textDecoration: 'none',
+    fontSize: '1.3rem',
+    marginRight: '20px'
   }
 }));
 
@@ -55,11 +57,9 @@ export default (props) => {
             Dashboard
           </Typography>
           <nav>
-            <Button color="primary" variant="outlined" className={classes.link}>
               <Link to="/analytics" className={classes.rrd_link}>
                 Analytics
               </Link>
-            </Button>
           </nav>
           <Button href="#" color="primary" variant="outlined" className={classes.link} onClick={handleLogout}>
             Log out
@@ -72,11 +72,10 @@ export default (props) => {
           {`Welcome ${props.username}`}
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Let's get you started.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          The purrr-fect lorem ipsum generator for clients who love their cats and cat memes. 
+          It’ll have your cat-loving clients purring their appreciation for your mock-ups in no time.
         </Typography>
       </Container>
-      
     </React.Fragment>
   );
 }
