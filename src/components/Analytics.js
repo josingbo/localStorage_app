@@ -74,7 +74,7 @@ const Analytics = () => {
               color="textSecondary"
               paragraph
             >
-              Coming Soon ...
+              Coming Soon
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
