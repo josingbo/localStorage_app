@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -32,35 +32,49 @@ const useStyles = makeStyles(theme => ({
   rrd_link: {
     color: '#fff',
     fontSize: '1.3rem',
-    textDecoration: 'none'
-  }
+    textDecoration: 'none',
+  },
 }));
 
-export default () => {
+const Analytics = () => {
   const classes = useStyles();
-
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar position="relative">
-      <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" color="inherit" noWrap className={classes.toolbarTitle}>
+        <Toolbar className={classes.toolbar}>
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.toolbarTitle}
+          >
             Analytics
           </Typography>
           <nav>
-              <Link to="/" className={classes.rrd_link}>
-                Back to Dashboard
-              </Link>
+            <Link to="/" className={classes.rrd_link}>
+              Back to Dashboard
+            </Link>
           </nav>
         </Toolbar>
       </AppBar>
       <main>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-            </Typography>
-            <Typography variant="h2" align="center" color="textSecondary" paragraph>
-              Coming Soon ... 
+            <Typography
+              component="h1"
+              variant="h2"
+              align="center"
+              color="textPrimary"
+              gutterBottom
+            ></Typography>
+            <Typography
+              variant="h2"
+              align="center"
+              color="textSecondary"
+              paragraph
+            >
+              Coming Soon ...
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -76,4 +90,6 @@ export default () => {
       </main>
     </React.Fragment>
   );
-}
+};
+
+export default Analytics;

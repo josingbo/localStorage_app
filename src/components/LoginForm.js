@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,18 +39,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default (props) => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+const LoginForm = ({ history }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const classes = useStyles()
+  const classes = useStyles();
 
   const handleSubmit = e => {
-    e.preventDefault()
-    const user = {username, password}
-    localStorage.setItem('user', JSON.stringify(user))
-    props.history.push('/')
-  }
+    e.preventDefault();
+    const user = { username, password };
+    localStorage.setItem('user', JSON.stringify(user));
+    history.push('/');
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -104,4 +105,10 @@ export default (props) => {
       </Grid>
     </Grid>
   );
-}
+};
+
+LoginForm.propTypes = {
+  history: PropTypes.object.isRequired,
+};
+
+export default LoginForm;
